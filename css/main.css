@@ -1,0 +1,19 @@
+a {
+	color: #563d7c;
+}
+a:hover {
+	color: #563d7c;
+	text-decoration: none;
+}
+.nav-bar {
+	background-color: #563d7c;
+}
+
+.btn-purple {
+	background-color: #563d7c;
+	color: #FFFFFF;
+}
+
+.login form {
+	width: 350px;
+}
