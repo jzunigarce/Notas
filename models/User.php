@@ -118,38 +118,12 @@
 
     public function create() 
    	{
-   		try {
-   			$db = new DB();
-   			$conn = $db->getConnection();
-   			$sql = "INSERT INTO " . self::TABLE . "(name, last_name, email, password) VALUES(:name, :last_name, :email, :password)";
-   			$query = $conn->prepare($sql);
-   			$result = $query->execute(array(':name' => $this->firstName, ':last_name' => $this->lastName, ':email' => $this->email, ':password' => $this->password));
-   		} catch(Exception $e) {
-   			$result = false;
-   		} 
-   		return $result;
+   		
   	}
 
     public static function  findByEmail($email)
     {
-        try {
-            $db = new DB();
-            $conn = $db->getConnection();
-            $sql = "SELECT * FROM  " . self::TABLE . " WHERE email = :email limit 1";
-            $query = $conn->prepare($sql);
-            $result = $query->execute(array(':email' => $email));
-            $user = null;
-            if($row=$query->fetch(\PDO::FETCH_ASSOC)) {
-                $user = new User();
-                $user->setFirstName($row['name']);
-                $user->setLastName($row['last_name']);
-                $user->setEmail($row['email']);
-                $user->setPassword($row['password']);
-            }
-            return $user;
-        } catch(Exception $e) {
-            return null;
-        }
+        
     }
 }
  ?>
