@@ -1,14 +1,15 @@
-<?php require_once('template/header.php'); 
-	 if(isset($_GET['error']) && $_GET['error']) : 
-		if($_GET['error'] == 0) :
+<?php 
+	require_once('template/header.php'); 
+	 if(isset($_GET['error'])) : 
+		if($_GET['error'] == 1) :
 			$msj = 'Usuario creado correctamente';
-			$alert="alert-success";
-		else if($_GET['error'] == -2): 
+			$alert = "alert-success";
+		elseif($_GET['error'] == -2): 
 			$msj = 'Ocurrió un error al intentar guardar los datos del usuario';
-			$class="alert-danger";
+			$alert = "alert-danger";
 		else: 
 			$msj = 'Allgunos campos se encuentran vacíos';
-			$class="alert-danger";
+			$alert = "alert-danger";
 		endif;?>
 		<div class="alert <?php echo $alert;?> alert-dismissible fade show" role="alert">
 			<?php echo $msj; ?>
