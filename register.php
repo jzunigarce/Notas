@@ -1,4 +1,4 @@
-
+<?php require_once('template/header.php'); ?>
 	<section class="login d-flex justify-content-center">
 		<form action="controllers/userController.php?action=register" method="POST">
 			<div class="form-group">
@@ -23,3 +23,4 @@
 	<section class="mt-2 text-center">
 		<a href="index.php">Iniciar Sesión</a>
 	</section>
+<?php require_once('template/footer.php'); ?>

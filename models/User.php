@@ -1,9 +1,6 @@
 <?php 
-	namespace  app\model;
-
-	require_once('../db/DB.php');
 	
-	use app\db\DB;
+    require_once('../db/DB.php');
 
 	class User {
 		
@@ -118,7 +115,21 @@
 
     public function create() 
    	{
-   		
+   		try {
+            $db = new DB();
+            $conn = $db->getConnection();
+            $sql = "INSERT INTO " . self::TABLE . "(name, last_name, email, password) VALUES(:name, :lastName, :email, :password)"; 
+            $query = $conn->prepare($sql);
+            $result = $query->execute(array(
+                ':name' => $this->firstName,
+                ':lastName' => $this->lastName,
+                ':email' => $this->email,
+                ':password' => $this->password
+            ));
+        } catch (Exception $e) {
+            $result = false;
+        }
+        return $result;
   	}
 
     public static function  findByEmail($email)

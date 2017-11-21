@@ -1,4 +1,4 @@
-
+<?php require_once('template/header.php'); ?>
 	<section class="login d-flex justify-content-center">
 		<form action="controllers/userController.php?action=login" method="POST">
 			<div class="form-group">
@@ -15,3 +15,4 @@
 	<section class="mt-2 text-center">
 		<a href="register.php">Crear cuenta</a>
 	</section>
+	<?php require_once('template/footer.php'); ?>
