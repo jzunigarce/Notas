@@ -27,10 +27,10 @@
 				if(!empty($_POST['email']) && !empty($_POST['password'])) {
 					$password = $_POST['password'];
 					$user = User::findByEmail($_POST['email']);
-					var_dump(password_verify($password, $user->getPassword()));
 					if (!is_null($user) && password_verify($password, $user->getPassword())) {
 						header("Location: /notas.php");
 						$_SESSION['user'] = $user->getEmail();
+						$_SESSION['id'] = $user->getId();
 					} else { 
 						header("Location: /index.php?error=-1");
 					}

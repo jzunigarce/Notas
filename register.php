@@ -8,7 +8,7 @@
 			$msj = 'Ocurrió un error al intentar guardar los datos del usuario';
 			$alert = "alert-danger";
 		else: 
-			$msj = 'Allgunos campos se encuentran vacíos';
+			$msj = 'Algunos campos se encuentran vacíos';
 			$alert = "alert-danger";
 		endif;?>
 		<div class="alert <?php echo $alert;?> alert-dismissible fade show" role="alert">

@@ -19,17 +19,16 @@
   </head>
   <body>
     <header class="container-fluid nav-bar pt-3 pb-3">
-      <?php if(!empty($_SESSION['user'])):
-      ?>
-        <h4 class="text-white text-right block">
+    	<h1 class="text-white text-center block">App notes <i class="fa fa-sticky-note" aria-hidden="true"></i>
+        <?php if(!empty($_SESSION['user'])):?>
+        <h6 class="text-white text-right block">
           <i class="fa fa-user" aria-hidden="true"></i>
           <?php echo $_SESSION['user'];?> &nbsp;&nbsp;
           <a class="text-white" href="controllers/userController.php?action=sign-out">
             <i class="fa fa-sign-out" aria-hidden="true"></i>
           </a>
-      </h4>
+      </h6>
       <?php endif; ?>
-    	<h1 class="text-white text-center block">App notes <i class="fa fa-sticky-note" aria-hidden="true"></i>
 </h1>
     </header>
     <div class="container pt-5">

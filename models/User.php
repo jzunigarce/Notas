@@ -1,7 +1,7 @@
 <?php 
 	namespace  app\model;
 
-	require_once('../db/DB.php');
+	require_once(dirname(__FILE__) . '/../db/DB.php');
 	
 	use app\db\DB;
 
@@ -130,7 +130,7 @@
    		return $result;
   	}
 
-    public static function  findByEmail($email)
+    public static function findByEmail($email)
     {
         try {
             $db = new DB();
@@ -141,6 +141,7 @@
             $user = null;
             if($row=$query->fetch(\PDO::FETCH_ASSOC)) {
                 $user = new User();
+                $user->setId($row['id']);
                 $user->setFirstName($row['name']);
                 $user->setLastName($row['last_name']);
                 $user->setEmail($row['email']);
